@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<style>
+  *,
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
+<script>
+  let img;
+  let savedMouse;
+  let auswahlX = 550;
+  let auswahlY = 180;
+
+  function preload() {
+    img = loadImage("statue.jpg");
+  }
+
+  function setup() {
+    createCanvas(window.innerWidth, window.innerHeight);
+    image(img, 0, 0, window.innerWidth, window.innerHeight);
+    frameRate(10);
+    savedMouse = createVector(0, 0);
+  }
+
+  function draw() {
+    copy(img, auswahlX, auswahlY, 150, 150, mouseX, mouseY, 75, 75);
+  }
+
+  function mousePressed() {
+    savedMouse.x = mouseX; //Save the mouse position;
+    savedMouse.y = mouseY;
+  }
+
+  function keyPressed() {
+    if (key == "r" || key == "R") image(img, 0, 0);
+
+    if (key == "1") {
+      auswahlX = 550;
+      auswahlY = 180;
+    }
+
+    if (key == "2") {
+      auswahlX = 600;
+      auswahlY = 300;
+    }
+
+    if (key == "3") {
+      auswahlX = 650;
+      auswahlY = 540;
+    }
+
+    if (key == "4") {
+      auswahlX = 590;
+      auswahlY = 700;
+    }
+  }
+</script>

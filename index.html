@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8" />
+
+<title>generative exploration</title>
+
+<style>
+  body {
+    background: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .grid-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 0.5fr;
+    grid-template-areas: "top-left top right" "left main right" "bottom bottom bottom";
+  }
+
+  .main {
+    grid-area: main;
+    border: 1px solid grey;
+  }
+
+  .right {
+    grid-area: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+  }
+
+  .right > p {
+    transform: rotate(-90deg);
+  }
+
+  .bottom {
+    grid-area: bottom;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .top {
+    grid-area: top;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .top-left {
+    grid-area: top-left;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left {
+    grid-area: left;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left > p {
+    transform: rotate(-90deg);
+  }
+</style>
+
+<div class="grid-container">
+  <iframe src="sketch4.html" class="main"></iframe>
+
+  <div class="right">
+    <p>about</p>
+  </div>
+  <div class="bottom"><p>distortions</p></div>
+  <div class="top">
+    <p>generative<br />exploration</p>
+  </div>
+  <div class="top-left">
+    <p>
+      Max<br />
+      Kohl
+    </p>
+  </div>
+  <div class="left">
+    <p>(r)eset (s)ave<br />(1-4) bodyparts</p>
+  </div>
+</div>
