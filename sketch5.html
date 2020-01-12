@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sketch 4</title>
+<title>Sketch 6</title>
 <style>
 body {
   margin: 0;
@@ -13,13 +13,12 @@ body {
 <script>
 let img;
 let size = 500;
-let distance = 10;
-let c;
+let distance = 3;
 let myFont;
 let canvas;
 
 function preload() {
-  img = loadImage("sketch4.jpg");
+  img = loadImage("sketch5.jpg");
   myFont = loadFont("FiraCode-Regular.ttf");
 }
 
@@ -33,25 +32,32 @@ function setup() {
 }
 
 function draw() {
-  copy(img, 0, height - 20, width, height, 0, height - 20, width, height);
+  copy(img, 
+       0, height - 20, width, height, 
+       0, height - 20, width, height);
+
   if (mouseIsPressed) {
-    copy(mouseX, mouseY, size, size, mouseX + distance, mouseY + distance, size, size - size / 2);
+    copy(mouseX, mouseY, size, size, mouseX, mouseY, size - distance, size - distance);
   }
-  fill(0);
+  fill(255);
   textAlign(CENTER);
-  text("size: " + size + "  distance: " + distance, width / 2, height - 5);
+  text("size: " + size + "  spacing: " + distance, width / 2, height - 5);
+
 }
 
 function keyPressed() {
   if (key === 's') saveCanvas(canvas, 'gen_exploration', 'jpg');
   if (key == 'r') image(img, width / 2, height / 2);
-  if (keyCode == RIGHT_ARROW) size = size + 20;
-  if (keyCode == LEFT_ARROW) {
+  if (keyCode == UP_ARROW) size = size + 20;
+  if (keyCode == DOWN_ARROW) {
     size = size - 20;
     if (size == 40) size = size + 20;
   }
-  if (keyCode == UP_ARROW) distance = distance + 10;
-  if (keyCode == DOWN_ARROW) distance = distance - 10;
+  if (keyCode == RIGHT_ARROW) distance = distance + 1;
+  if (keyCode == LEFT_ARROW) {
+    distance = distance - 1;
+    if (distance == -1) distance = distance + 1;
+  }
 }
 
 function windowResized() {

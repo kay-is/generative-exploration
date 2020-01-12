@@ -1,96 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>generative exploration</title>
 
+<link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
+
 <style>
-  body {
-    background: black;
-    color: white;
+html, body {
     margin: 0;
     padding: 0;
-    width: 100%;
+    background: black;
     height: 100%;
-  }
-  .grid-container {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 0.5fr 2fr 0.5fr;
-    grid-template-rows: 0.5fr 2fr 0.5fr;
-    grid-template-areas: "top-left top right" "left main right" "bottom bottom bottom";
-  }
+}
 
-  .main {
-    grid-area: main;
-    border: 1px solid grey;
-  }
-
-  .right {
-    grid-area: right;
+nav {
     display: flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    font-size: 24px;
-  }
+    float: left;
+    height: 100%;
+    width: 30px;
+}
 
-  .right > p {
-    transform: rotate(-90deg);
-  }
+a {
+    font-family: El Messiri;
+    color: white;
+    text-decoration: none;
+}
 
-  .bottom {
-    grid-area: bottom;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+#sketch, #text {
+    float: left;
+    width: 47%;
+    height: 100%;
+    border: none;
+}
 
-  .top {
-    grid-area: top;
-    font-size: 36px;
-    text-align: center;
-  }
+#text {
+    width: 50%;
+    margin: -1px;
+    border-left: 1px solid #111;
+}
 
-  .top-left {
-    grid-area: top-left;
-    font-size: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+img {
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    left: 12%;
+}
 
-  .left {
-    grid-area: left;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .left > p {
-    transform: rotate(-90deg);
-  }
 </style>
 
-<div class="grid-container">
-  <iframe src="sketch4.html" class="main"></iframe>
+<img src="/gen-expl-logo.png">
 
-  <div class="right">
-    <p>about</p>
-  </div>
-  <div class="bottom"><p>distortions</p></div>
-  <div class="top">
-    <p>generative<br />exploration</p>
-  </div>
-  <div class="top-left">
-    <p>
-      Max<br />
-      Kohl
-    </p>
-  </div>
-  <div class="left">
-    <p>(r)eset (s)ave<br />(1-4) bodyparts</p>
-  </div>
-</div>
+<iframe src="sketch1.html" id="sketch" name="sketch"></iframe>
+<nav>
+    <a href="sketch1.html" target="sketch">1</a><br>
+    <a href="sketch2.html" target="sketch">2</a><br>
+    <a href="sketch3.html" target="sketch">3</a><br>
+    <a href="sketch4.html" target="sketch">4</a><br>
+    <a href="sketch5.html" target="sketch">5</a><br>
+    <a href="sketch6.html" target="sketch">6</a><br>
+    <a href="sketch7.html" target="sketch">7</a><br>
+    <a href="sketch8.html" target="sketch">8</a><br>
+    <a href="sketch9.html" target="sketch">9</a><br>
+</nav>
+<iframe src="text.html"  id="text"></iframe>

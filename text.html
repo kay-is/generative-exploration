@@ -1,0 +1,201 @@
+<!doctype html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>text.html</title>
+
+<link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: El Messiri;
+    height: 100%;
+    font-size: 19px;
+    overflow-x: hidden;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+main > p {
+    line-height: 160%;
+    text-indent: 30px;
+}
+
+main em {
+    font-size: 14px;
+    font-style: normal;
+    margin-left: 30px;
+    display: inline-block;
+}
+
+body > nav {
+    background: black;
+    top: 0;
+    width: 90%;
+    text-align: justify;
+    text-align-last: justify;
+    padding: 36px 36px 0 36px;
+}
+main {
+    margin: 36px;
+}
+
+#zines {
+    display: flex;
+    align-items: center;
+}
+
+#zines > nav {
+    width: 137px;
+    flex-direction: column;
+}
+
+#zines > nav > a {
+    display: block;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+#zines iframe {
+    border: none;
+    width: 455px;
+    height: 330px;
+}
+
+#zines p {
+    padding-left: 6px;
+}
+body > footer {
+    position: fixed;
+    bottom: 0;
+    background: black;
+    width: 90%;
+    text-align: justify;
+    text-align-last: justify;
+    padding: 18px 36px 18px 36px;
+}
+</style>
+
+<nav>
+    <a href="#exploration">generative&MediumSpace;exploration</a>
+    <a href="#zines">zines</a>
+    <a href="#gestaltung">generative&MediumSpace;gestaltung</a>
+    <a href="#about">about</a>
+</nav>
+<main>
+    <p>
+        „Painting with a mouse on the computer screen has a high entertainment value, but (…)
+        drawing a stroke with a pen is no different from drawing a stroke with a mouse. The real
+        challenge is to discover the intrinsic properties of the new medium and to find out how the
+        stroke you draw via computation is one you could never draw, or even imagine, without
+        computation.“
+        <br><em>(Design by Numbers von John Maeda)</em>
+    </p>
+    <p>
+        Der Zugang zu Entwicklungsumgebungen für generative Gestaltung ist für
+        Kommunikationsdesigner in den letzten 20 Jahren immer einfacher geworden. Ohne große
+        Vorerfahrung im Programmieren
+        will ich einen Einstieg in diese neue Arbeitsweise finden, eigene Programme schreiben und
+        mich mit den Möglichkeiten der Anwendung derer beschäftigen.
+    </p>
+    <p id="exploration">
+        Unter generative exploration finden sich verschiedene Sketche aus der zweiten Hälfte meiner
+        Auseinandersetzung mit generativer Gestaltung, welche im Ramen meiner Abschlussarbeit an der
+        Hochschule Pforzheim entstanden. Es sind Tools welche sich für unterschiedliche
+        Bildmanipulationen verwenden lassen. Per Pfeiltasten lässt sich die Größe der auszuwählenden
+        Bereiche verändern, die Auswahl wird durch Mausklicks verschoben/skaliert/multipliziert bzw.
+        generell verändert. Neben den hier anwendbaren Tools finden sich in den Zines eine größere
+        Auswahl an Beispielen für eine bessere Übersicht und zum Aufzeigen deren Möglichkeiten in
+        der Anwendung. Bei interesse an einer oder mehreren Zines schreib mir einfach eine Mail.
+    </p>
+
+    <div id="zines">
+        <nav>
+            <a target="zines" href="/zine1.gif">Zine #01</a>
+            <a target="zines" href="/zine2.gif">Zine #02</atarget="zines">
+            <a target="zines" href="/zine3.gif">Zine #03</atarget="zines">
+            <a target="zines" href="/zine4.gif">Zine #04</atarget="zines">
+            <a target="zines" href="/zine5.gif">Zine #05</atarget="zines">
+        </nav>
+        <div>
+            <iframe src="/zine1.gif" name="zines"></iframe>
+            <p>Bildmanipulationen aus 9 Sketchen am Beispiel von computerwork.jpg</p>
+        </div>
+    </div>
+
+    <p id="gestaltung">
+        Bei generativer Gestaltung wird anders als beim herkömmlichen Gestaltungsprozess das
+        Ergebnis durch einen vom Designer vorgegebenen Algorithmus geschaffen. Das Ergebnis wird
+        also nicht mehr von dem Designer direkt erzeugt. Durch die zugänglicheren
+        Programmierumgebungen wird diese Methode seit ca. 2000 auch im Kommunikationsdesign immer
+        mehr angewendet. Im Vergleich zu der Kunst, Produktdesign oder der Architektur bleibt
+        Generative Gestaltung jedoch ein viel kleineres Nischenthema im Kommunikationsdesign. Ein
+        Grund hierfür könnte sein, dass der ästhetische Aspekt weitaus wichtiger ist als z.B. im
+        Industriedesign wo viele generativ entstandenen Bauteile nicht direkt sichtbar sind.
+    </p>
+    <p>
+        „Generative design is an iterative design process usually involving a program that generates
+        an output based on certain constraints and variables defined and by that program. I think
+        architect Laws Hesellgren sums it up perfectly when he says: "Generative design is not about
+        designing the building, it is about designing the system that builds a building."“
+        <br><em>(Intro to Generative Design for Graphic Designers von Pat Riley)</em>
+    </p>
+    <p>
+        Der derzeit meist angewendete Gestaltungsprozess ist stark an den Analogen Prozess
+        angelehnt. Programme wie InDesign oder Photoshop haben zwar die Schritte der Umsetzung einer
+        Idee stark vereinfacht und verkürzt, funktionieren aber noch nach dem selben Prinzip. Bei
+        generativen Gestaltungsansätzen wird nicht Schritt für Schritt an etwas gearbeitet bis es zu
+        einem fertigen Ergebnis wird, sondern die Idee der Arbeit wird zu einem übergeordneten
+        Prinzip abstrahiert. Aus diesem Algorithmus wird der Quellcode geschrieben, welcher dann
+        Ergebnisse ausgibt. Diese Ergebnisse werden selbst nicht bearbeitet, sondern der Quellcode
+        und Parameter werden angepasst bis das Ergebnis stimmt. Oft können hierbei auch unerwartete
+        Ergebnisse entstehen. Durch den Einsatz von Zufalls- funktionen lassen sich auch unendliche
+        Varianten eines Ergebnisses erzeugen. Dies wird aber besser, je weiter man den Zufall
+        beschränkt bzw. lenkt.
+    </p>
+    <p>
+        „Der vielleicht wichtigste Aspekt bei der Erweiterung der Möglichkeiten für den Gestalter
+        ist, dass dieser nun der Schöpfer seiner eigenen Werkzeuge sein kann. Denn jedes generative
+        Programm ist auch gleichzeitig ein maßgeschneidertes Software-Werkzeug. Damit kann der
+        Gestalter neue Wege einschlagen, die mit aktuellen Software-Standards nicht zu beschreiten
+        wären, was insgesamt zu einer größeren Bandbreite an visuellen Gestaltungsmitteln führen
+        wird. Es ist erstaunlich, wie weit man inbesondere mit selbst entwickelten Werkzeugen in
+        Dialog kommen kann (...). Selbst diese einfachen Zeichenwerkzeuge erweitern die üblichen
+        Möglichkeiten beträchtlich. Aber nicht nur das — durch die Fähigkeit, das Werkzeug ständig
+        verfeinern zu können, wird es zum perfekt abgestimmten Arbeitsinstrument. Außerdem ist in
+        der Regel der Schritt von einem generativen Programm zu einem ausgebauten Werkzeug mit
+        eigener Oberfläche nicht allzu groß.“
+        <br><em>
+            (Generative Gestaltung von Hartmut Bohnacker, Benedikt Groß, Julia Laub und Claudius
+            Lazzeroni)
+        </em>
+    </p>
+    <p>
+        generative exploration ist ein Projekt, das aus der Abschlussarbeit von Max Kohl an der
+        Hochschule Pforzheim entstanden ist. In dieser Arbeit beschäftigte er sich das erste Mal
+        mit generativen Gestaltungsprozessen und deren mögliche Anwendungen im Kommunikationsdesign.
+    </p>
+    <p>
+        Da die Arbeit nur möglich war durch den freien Zugang zu Tutorials, open source und der
+        Hilfe anderer Gestaltern und Programierern off wie online ist auch der von mir geschriebene
+        Quellcode der hier gezeigten Sketche frei auf Github veröffentlicht.
+    </p>
+    <p id="about">
+        Die Konzeption und Gestaltung der Website sowie Programmierung der Sketche und Layout der
+        Zines von Max Kohl. Umsetzung der Website, Kay Plößer.
+    </p>
+</main>
+<footer>
+    <a href="">Mail</a>
+    <a href="">Instagram</a>
+    <a href="">Github</a>
+    <a href="">Impressum</a>
+</footer>

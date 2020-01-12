@@ -1,7 +1,7 @@
 <!doctype html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sketch 4</title>
+<title>Sketch 9</title>
 <style>
 body {
   margin: 0;
@@ -12,14 +12,15 @@ body {
 <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
 <script>
 let img;
-let size = 500;
-let distance = 10;
-let c;
 let myFont;
+let zeile = 0;
+let positionY;
+let positionX; //für leichte seitliche verschiebung
+let scanhoehe = 1;
 let canvas;
 
 function preload() {
-  img = loadImage("sketch4.jpg");
+  img = loadImage("sketch9.jpg");
   myFont = loadFont("FiraCode-Regular.ttf");
 }
 
@@ -30,28 +31,44 @@ function setup() {
   image(img, width / 2, height / 2);
   textFont(myFont);
   textSize(14);
+  frameRate(60);
 }
 
 function draw() {
   copy(img, 0, height - 20, width, height, 0, height - 20, width, height);
-  if (mouseIsPressed) {
-    copy(mouseX, mouseY, size, size, mouseX + distance, mouseY + distance, size, size - size / 2);
+
+  if (zeile == 0) {
+    positionY = mouseY;
+    positionX = int(map(mouseX, 0, width / 2, -5, 5));
   }
-  fill(0);
+
+  if (mouseIsPressed) {
+    positionY = mouseY;
+    positionX = int(map(mouseX, 0, width / 2, -5, 5));
+  } else {
+    positionY = zeile;
+  }
+
+  copy(img, 0, positionY, width, scanhoehe, 0 - positionX, zeile, width - positionX, scanhoehe);
+
+  zeile = zeile + scanhoehe;
+
+  stroke('rgb(50%,50%,50%)');
+  line(40, zeile + 2, width - 40, zeile + 2);
+
+  if (zeile == height + 20) {
+    zeile = 0;
+    image(img, width / 2, height / 2);
+
+  }
+
+  fill(255);
   textAlign(CENTER);
-  text("size: " + size + "  distance: " + distance, width / 2, height - 5);
+  text("scan: " + zeile, width / 2, height - 5);
 }
 
 function keyPressed() {
-  if (key === 's') saveCanvas(canvas, 'gen_exploration', 'jpg');
-  if (key == 'r') image(img, width / 2, height / 2);
-  if (keyCode == RIGHT_ARROW) size = size + 20;
-  if (keyCode == LEFT_ARROW) {
-    size = size - 20;
-    if (size == 40) size = size + 20;
-  }
-  if (keyCode == UP_ARROW) distance = distance + 10;
-  if (keyCode == DOWN_ARROW) distance = distance - 10;
+  if (key == 's') saveCanvas(canvas, 'gen_exploration', 'jpg');
 }
 
 function windowResized() {
