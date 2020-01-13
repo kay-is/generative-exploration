@@ -42,35 +42,48 @@ main em {
 body > nav {
     position: fixed;
     font-size: 14px;
-    background: black;
     top: 0;
-    width: 90%;
-    text-align: justify;
-    text-align-last: justify;
+    background: black;
     padding: 10px;
-    padding-left: 36px;
-    padding-right: 36px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
+
+body > nav > a {
+    display: block;
+}
+
 main {
     margin: 36px;
     padding-bottom: 500px;
     padding-top: 50px;
+    overflow: hidden;
 }
 
 #zines {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
+#zines > div {
+    width: 100%;
+}
+
+#zines > div > img {
+    width: 100%;
+} 
+
 #zines > nav {
-    flex-direction: column;
+    width: 100%;
 }
 
 #zines > nav > a {
     cursor: pointer;
-    display: block;
-    width: 70px;
-    margin-bottom: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100px;
 }
 
 #zines p {
@@ -83,22 +96,21 @@ body > footer {
     position: fixed;
     bottom: 0;
     background: black;
-    width: 90%;
-    text-align: justify;
-    text-align-last: justify;
-    padding: 18px 36px 18px 36px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
 }
 
 body > footer > a {
     text-decoration: underline;
+    display: block;
 }
 </style>
 
 <nav>
-    <a href="#explorationanchor">generative&MediumSpace;exploration</a>
-    <a href="#zinesanchor">zines</a>
-    <a href="#gestaltunganchor">generative&MediumSpace;gestaltung</a>
-    <a href="#aboutanchor">about</a>
+    <a href="mobile.html">zurück</a>
+    <a href="impressum.html">impressum</a>
 </nav>
 <main>
     <p>
@@ -128,6 +140,10 @@ body > footer > a {
     </p>
 
     <div id="zines">
+        <div>
+            <img src="zine1.gif"><br>
+            <p>Bildmanipulationen aus 9 Sketchen am<br> Beispiel von computerwork.jpg<a id="gestaltunganchor"></a></p>
+        </div>
         <nav>
             <a href="zine1.gif">Zine #01</a>
             <a href="zine2.gif">Zine #02</a>
@@ -135,10 +151,6 @@ body > footer > a {
             <a href="zine4.gif">Zine #04</a>
             <a href="zine5.gif">Zine #05</a>
         </nav>
-        <div>
-            <img src="zine1.gif"><br>
-            <p>Bildmanipulationen aus 9 Sketchen am<br> Beispiel von computerwork.jpg<a id="gestaltunganchor"></a></p>
-        </div>
     </div>
 
     <p>
@@ -207,8 +219,6 @@ body > footer > a {
     <a href="mailto:kohl@generative-exploration.de">Mail</a>
     <a href="https://www.instagram.com/gen_exploration/" target="_blank">Instagram</a>
     <a href="https://github.com/generative-exploration?tab=repositories" target="_blank">Github</a>
-    <a style="text-decoration: none">&nbsp;</a>
-    <a href="impressum.html" target="text" style="color: #A6A6A6">impressum</a>
 </footer>
 
 <script>

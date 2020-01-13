@@ -3,10 +3,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sketch 7</title>
 <style>
+html, body {
+  overflow-x: hidden;
+  touch-action: none;
+}
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  position: relative;
 }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
@@ -23,7 +27,12 @@ function preload() {
 
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
-  img.resize(windowWidth, 0);
+  if(windowWidth/windowHeight > img.width/img.height) {
+    img.resize(windowWidth, 0);
+  }
+  else {
+    img.resize(0, windowHeight);
+  }
   imageMode(CENTER);
   image(img, width / 2, height / 2);
   textFont(myFont);

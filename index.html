@@ -6,6 +6,12 @@
 <title>generative exploration</title>
 
 <link href="https://fonts.googleapis.com/css?family=El+Messiri&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+
+
+<script type="text/javascript">
+if (screen.width < 1000) window.location = "mobile.html";
+</script>
 
 <style>
 html, body {
@@ -13,6 +19,7 @@ html, body {
     padding: 0;
     background: black;
     height: 100%;
+    color: white;
 }
 
 nav {
@@ -29,6 +36,7 @@ a {
     font-family: El Messiri;
     color: white;
     text-decoration: none;
+    font-size: 16px;
 }
 
 #sketch, #text {
@@ -44,16 +52,53 @@ a {
     border-left: 1px solid #111;
 }
 
-img {
+#logo {
     position: absolute;
     z-index: 10;
     top: 0px;
-    left: 12%;
+    width: 47%;
+    text-align: center;
+    height: 1px;
+}
+
+.howto {
+    font-family: Fira Code;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+    left: 2%;
+    font-size: 12px;
+}
+
+.howto a {
+    font-family: Fira Code;
+    font-size: 12px;
+}
+
+footer {
+    font-size: 12px;
+    font-family: Fira Code;
+    position: absolute;
+    z-index: 10;
+    bottom: 3%;
+    left: 20%;
 }
 
 </style>
 
-<img src="gen-expl-logo.png">
+<div id="logo">
+    <img src="gen-expl-logo.png">
+</div>
+
+<div class="howto">
+    <div></div>
+    <br>
+    <a href="focus.html">focus mode</a>
+</div>
+
+<footer>
+    <span>prog - followed</span>
+</footer>
 
 <iframe src="sketch1.html" id="sketch" name="sketch"></iframe>
 <nav>
@@ -67,4 +112,6 @@ img {
     <a href="sketch8.html" target="sketch">8</a><br>
     <a href="sketch9.html" target="sketch">9</a><br>
 </nav>
-<iframe src="text.html"  id="text" name="text"></iframe>
+<iframe src="text.html" id="text" name="text"></iframe>
+
+<script src="script.js"></script>
